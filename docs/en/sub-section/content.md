@@ -6,17 +6,19 @@ More details about subsections inclusion can be found [here](https://diplodoc.co
 Language:enum type cast
 Status: Released
 
-Contents
-1,	Enum type cast
+# Contents
+
+1.	Enum type cast
   1.	Explicit type cast
   1.	enum <-> str type cast
   1.	enum <-> int type cast
   1.	enum E1 -> enum E2
 1.	Implicit type cast
+   
 Enum type cast
 Explicit and implicit type casts are supported for enum with several restrictions. Explicit/implicit type cast may be allowed for read access and always forbidden for write access.
 
-Explicit type cast
+# Explicit type cast
 Explicit type cast is made with the help of operator as.
 
 enum <-> str type cast
@@ -34,7 +36,7 @@ The result of str to enum type cast will be a variant with the str value equal t
 
 {% endcut %}
 
-Example:
+[Example](*term_key)
 
 type Color = enum { Red, Green = 2 [[str="G"]], Blue };
 
@@ -42,3 +44,6 @@ var x3 = "G" as Color;                                    // x3 == Color.Green.
 var x4 = "Red" as Color;                                  // x4 == Color.Red – default 'str' value.
 var x5 = "Green" as Color;                                // Runtime error – E_TypeCastError, the type 'Color' doesn't have a variant with a str value 'Green'.
 enum <-> int type cast
+
+[*term_key]: Here ia a hint explain
+
